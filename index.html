@@ -1,13 +1,48 @@
+
 <!DOCTYPE html>
 <html lang="ko">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Face Analyzer</title>
+  <title>얼굴 기반 호르몬 분석기</title>
+  <style>
+    body {
+      font-family: 'Pretendard', sans-serif;
+      text-align: center;
+      padding: 2rem;
+    }
+    h1 {
+      font-size: 2rem;
+    }
+    #preview {
+      margin-top: 1rem;
+      max-width: 200px;
+    }
+    .result-box {
+      margin-top: 2rem;
+      padding: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+    }
+  </style>
 </head>
 <body>
   <h1>얼굴 기반 호르몬 분석기</h1>
-  <input type="file" id="imageUpload" accept="image/*"/>
+  <input type="file" id="imageUpload" accept="image/*" />
+  <div id="previewContainer">
+    <img id="preview" src="" alt="Preview" />
+  </div>
+  <div class="result-box" id="resultBox" style="display:none;">
+    <h2>분석 결과</h2>
+    <p><strong>테스토스테론:</strong> <span id="testosterone"></span>%</p>
+    <p><strong>에스트로겐:</strong> <span id="estrogen"></span>%</p>
+    <p><strong>안면 특징:</strong></p>
+    <ul>
+      <li>턱 강도: <span id="jawStrength"></span></li>
+      <li>눈 크기: <span id="eyeSize"></span></li>
+      <li>입술 두께: <span id="lipThickness"></span></li>
+    </ul>
+  </div>
   <script src="script.js"></script>
 </body>
 </html>
